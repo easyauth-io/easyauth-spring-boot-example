@@ -24,7 +24,7 @@ public class UserRestController {
     }
 
     @GetMapping("/profile")
-    public String profile(@RegisteredOAuth2AuthorizedClient({registration_id}) OAuth2AuthorizedClient authorizedClient) {
+    public String profile(@RegisteredOAuth2AuthorizedClient("easyauth") OAuth2AuthorizedClient authorizedClient) {
         String resourceUri = "https://{your_subdomain}.{app}.easyauth.io/tenantbackend/api/profile";
         return webClient
                 .get()
