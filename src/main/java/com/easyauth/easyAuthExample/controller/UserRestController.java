@@ -1,7 +1,6 @@
 package com.easyauth.easyAuthExample.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +23,9 @@ public class UserRestController {
     }
 
     @GetMapping("/profile")
-    public String profile(@RegisteredOAuth2AuthorizedClient("easyauth") OAuth2AuthorizedClient authorizedClient) {
-        String resourceUri = "https://{your_subdomain}.{app}.easyauth.io/tenantbackend/api/profile";
+    public String profile(@RegisteredOAuth2AuthorizedClient("easyauth") OAuth2AuthorizedClient authorizedClient,
+                          @Value("${easyauth.config.baseuri}") String baseUri) {
+        String resourceUri = baseUri + "/tenantbackend/api/profile";
         return webClient
                 .get()
                 .uri(resourceUri)

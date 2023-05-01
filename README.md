@@ -6,10 +6,8 @@
 
     `git clone git@github.com:easyauth-io/easyauth-spring-boot-example.git`
 
-3. Open the project in IntelliJ idea
+3. Open the project in your favourite editor. 
 
-4. Edit the `src/main/resources/application.properties file` and set the values from your 'Registered Client' that you created in step1 excluding the curly braces-{}.
+4. Edit the `src/main/resources/application.properties` file and set the values from your 'Registered Client' that you created in step 1 in place of the curly braces - {}.
 
-5. Also edit `line 27 & 28` of `src/main/java/com/easyauth/easyAuthExample/controller/UserRestController.java` providing the correct values excluding curly braces-{}.
-
-6. Run the project and visit [http://127.0.0.1:8080](http://127.0.0.1:8080)
+5. Run the project and visit [http://127.0.0.1:8080](http://127.0.0.1:8080)
